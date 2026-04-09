@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
             features = "classpath:Features",
             glue = {"com.cucumber"},
-            tags = "@AccountSetup",
+            tags = "@Login",
             plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }
 
     )

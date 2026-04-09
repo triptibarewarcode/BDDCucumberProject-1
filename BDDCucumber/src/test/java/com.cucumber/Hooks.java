@@ -6,14 +6,8 @@ import com.cucumber.commonBase.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
-import java.time.Duration;
 
 public class Hooks extends Base
 
@@ -28,10 +22,10 @@ public class Hooks extends Base
         String URL = readPropertiesFile("URL");
 
         System.out.println("Browser Name: "+browserIs);
-
         driver = browserLaunch(browserIs);
         driver.manage().window().maximize();
         driver.get(URL);
+
 
     }
 
@@ -45,7 +39,7 @@ public class Hooks extends Base
                 System.out.println("Warning: ExtentTest is null, failed step could not be logged.");
             }
         }
-        //driver.close();
+        driver.close();
         driver.quit();
     }
 }

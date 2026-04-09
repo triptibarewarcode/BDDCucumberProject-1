@@ -3,12 +3,14 @@ package com.cucumber.commonBase;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.asserts.SoftAssert;
 
 import java.io.*;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 public class Base {
@@ -21,9 +23,9 @@ public class Base {
 
         if (browser.equalsIgnoreCase("chrome")) {
 
-            webDriver.set(new ChromeDriver());
+           webDriver.set(new ChromeDriver());
         } else if (browser.equalsIgnoreCase("firefox")) {
-            webDriver.set(new ChromeDriver());
+            webDriver.set(new FirefoxDriver());
         } else if (browser.equalsIgnoreCase("edge")) {
             webDriver.set(new EdgeDriver());
         }
