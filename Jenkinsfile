@@ -8,15 +8,19 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+    stage('Build') {
             steps {
-                bat 'mvn clean compile'
+                dir('BDDCucumber') {
+                    bat 'mvn clean compile'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('BDDCucumber') {
+                    bat 'mvn test'
+                }
             }
         }
 
