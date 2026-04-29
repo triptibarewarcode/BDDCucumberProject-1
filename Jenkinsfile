@@ -24,6 +24,18 @@ pipeline {
             }
         }
 
+        stage('Publish Report') {
+    steps {
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'BDDCucumber/Reports',  // adjust if needed
+            reportFiles: 'ExtentReport.html',
+            reportName: 'Extent Report'
+        ])
+    }
+}
         stage('Report') {
             steps {
                 echo 'Tests executed, check Extent Reports'
